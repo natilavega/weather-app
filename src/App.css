@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  width: 100%;
+}
+
+.form input {
+  flex-grow: 2;
+}
+
+main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather div {
+  display: flex;
+  gap: 1rem;
+}
+
+.weather p {
+  margin: 0;
+}
