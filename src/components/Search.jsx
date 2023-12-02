@@ -1,7 +1,7 @@
-import { useSearch } from '../hooks/useSarch'
+import { useSearch } from '../hooks/useSearch'
 
 export function Search ( { onSearch } ) {
-  const { search, updateSearch, error } = useSearch()
+  const { search, updateSearch, previousSearch, error } = useSearch()
 
   const handleChange = ( event ) => {
     const newSearch = event.target.value
@@ -14,6 +14,10 @@ export function Search ( { onSearch } ) {
   
   const handleSubmit = ( event ) => {
     event.preventDefault()
+
+    if ( search === previousSearch.current ) return 
+    previousSearch.current = search
+
     onSearch( { search } )
   }
 

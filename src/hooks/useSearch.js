@@ -3,7 +3,9 @@ import { useEffect, useState, useRef } from 'react'
 export function useSearch () {
   const [ search, updateSearch ] = useState( '' )
   const [ error, setError ] = useState( null )
+
   const isFirstInput = useRef( true )
+  const previousSearch = useRef( search )
 
   useEffect( () => {
     if ( isFirstInput.current ) {
@@ -24,5 +26,5 @@ export function useSearch () {
     setError( null )
   }, [ search ] )
   
-  return { search, updateSearch, error }
+  return { search, updateSearch, previousSearch, error }
 }
