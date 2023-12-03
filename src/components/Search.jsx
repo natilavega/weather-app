@@ -1,7 +1,8 @@
 import { useSearch } from '../hooks/useSearch'
 
 export function Search ( { onSearch } ) {
-  const { search, updateSearch, previousSearch, error } = useSearch()
+  const { search, updateSearch, debounceSearch, previousSearch, error }
+    = useSearch()
 
   const handleChange = ( event ) => {
     const newSearch = event.target.value
@@ -10,6 +11,7 @@ export function Search ( { onSearch } ) {
     if ( newSearch.match(/\d+/g) !== null ) return
 
     updateSearch( newSearch )
+    debounceSearch( onSearch, newSearch )
   }
   
   const handleSubmit = ( event ) => {

@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
+import debounce from 'just-debounce-it'
 
 export function useSearch () {
   const [ search, updateSearch ] = useState( '' )
@@ -25,6 +26,12 @@ export function useSearch () {
 
     setError( null )
   }, [ search ] )
-  
-  return { search, updateSearch, previousSearch, error }
+
+  const debounceSearch = useCallback(
+    debounce( ( onSearch, search ) => {
+      onSearch( { search } )
+    }, 300), []
+  )
+
+  return { search, updateSearch, debounceSearch, previousSearch, error }
 }
