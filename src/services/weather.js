@@ -9,6 +9,6 @@ export async function searchWeather ( { search } ) {
     const data = await response.json()
     return data
   } catch ( error ) {
-    throw new Error ('Error en la búsqueda. ' + error.message)
+    throw new Error ('Se ha producido un error en la conexión con el servidor.')
   }
 }

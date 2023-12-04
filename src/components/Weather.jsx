@@ -16,9 +16,9 @@ export function Weather ( { weather: { location, current }, error } ) {
             </div>
           </>
         ) : (
-          error ? <p>No se encontraron resultados.</p> : <p>No se realizó ninguna búsqueda.</p>
+          error ? <p>{ error }</p> : <p>No se ha realizado ninguna búsqueda.</p>
         )
-        }
+      }
     </>
   )
 }
