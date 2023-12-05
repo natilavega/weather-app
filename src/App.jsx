@@ -1,6 +1,7 @@
 import { useWeather } from './hooks/useWeather'
 import { Search } from './components/Search'
 import { Weather } from './components/Weather'
+import { Spinner } from './components/Spinner'
 import './App.css'
 
 function App () {
@@ -10,7 +11,11 @@ function App () {
     <>
       <Search onSearch={ getWeather } />
       <main>
-        { loading ? <p>Cargando...</p> : <Weather weather={ weather } error={error} /> }
+        {
+          loading
+            ? <Spinner />
+            : <Weather weather={ weather } error={ error } />
+        }
       </main>
     </> 
   )

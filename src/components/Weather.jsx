@@ -1,22 +1,28 @@
-export function Weather ( { weather: { location, current }, error } ) {
+import { Error } from './Error'
+import '../styles/Weather.css'
+
+export function Weather ( { weather: { location, current }, error } ) { 
   return (
     <>
       {
         current ? (
           <>
             <div className='location'>
-              <p><strong>{ location.name }</strong>, { location.region }, { location.country }</p>
+              <h3>{ location.name }</h3>
+              <p>{ location.region }, { location.country }</p>
             </div>
             <div className='weather'>
               <div>
                 <img src={ current.condition.icon } alt={ current.condition.text } />
-                <h3>{ current.temp_c }°C</h3>
+                <h1>{ current.temp_c }°C</h1>
               </div>
-              <p>{ current.condition.text }</p>
+              <div>
+                <p>{ current.condition.text }</p>
+              </div>
             </div>
           </>
         ) : (
-          error ? <p>{ error }</p> : <p>No se ha realizado ninguna búsqueda.</p>
+          <Error error={ error } />
         )
       }
     </>

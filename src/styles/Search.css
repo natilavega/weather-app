@@ -1,0 +1,19 @@
+header {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form input {
+  flex-grow: 2;
+}
+
+@media (min-width: 601px) {
+  .form {
+    flex-direction: row;
+  }
+}

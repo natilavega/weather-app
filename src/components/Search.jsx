@@ -1,4 +1,5 @@
 import { useSearch } from '../hooks/useSearch'
+import '../styles/Search.css'
 
 export function Search ( { onSearch } ) {
   const { search, updateSearch, debounceSearch, previousSearch, error }
@@ -31,10 +32,10 @@ export function Search ( { onSearch } ) {
           onChange={ handleChange }
           name='search'
           placeholder='Buenos Aires, Nueva York, Londres...'
+          style={ error ? { border : '1.5px solid var(--error)' } : { border : 'none' } }
         />
         <button>Buscar</button>
       </form>
-      { error && <small>{ error }</small> }
     </header>
   )
 }
