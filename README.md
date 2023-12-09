@@ -21,12 +21,12 @@ Puedes ver una demostración en vivo [aquí](https://minweather.vercel.app/).
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/aplicacion-del-tiempo.git
+   git clone https://github.com/natilavega/weather-app.git
 
 2. Navega al directorio del proyecto:
 
    ```bash
-   cd aplicacion-del-tiempo
+   cd weather-app
 
 3. Instala las dependencias:
 
