@@ -11,11 +11,6 @@ Aplicación web front-end que muestra datos meteorológicos obtenidos a través 
 - Búsqueda en tiempo real a medida que el usuario escribe, con función de debounce.
 - Integración con WeatherAPI para obtener datos meteorológicos actualizados.
 
-### Demo
-
-Puedes ver una demostración en vivo [aquí](https://minweather.vercel.app/).
-
-
 ### Instalación
 
 1. Clona el repositorio:
